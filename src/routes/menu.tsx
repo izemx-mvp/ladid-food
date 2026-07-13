@@ -59,7 +59,10 @@ function MenuPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary to-primary-dark py-16 md:py-24">
+      <section
+        className="relative bg-cover bg-center py-20 md:py-28"
+        style={{ backgroundImage: `linear-gradient(rgba(19,78,84,0.82), rgba(19,78,84,0.82)), url(${menuHero.url})` }}
+      >
         <div className="mx-auto max-w-4xl px-4 text-center text-white md:px-8">
           <h1 className="section-title text-white">Notre Menu</h1>
           <p className="mt-4 text-white/85">
