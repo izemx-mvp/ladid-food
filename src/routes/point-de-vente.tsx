@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Truck, ShoppingBag, Navigation } from "lucide-react";
-import pdv from "@/assets/point-de-vente.jpg.asset.json";
+import pdv from "@/assets/point-de-vente-new.png.asset.json";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
 
 export const Route = createFileRoute("/point-de-vente")({
   head: () => ({
-    meta: [
-      { title: "Point de Vente — Ladid Food · Retrait & livraison à Casablanca" },
+      meta: [
+      { title: "Point de Vente — Ladid Food · Retrait & livraison à Kénitra" },
       { name: "description", content: "Venez récupérer votre commande sur place ou faites-vous livrer. Adresse, horaires, itinéraire et zones de livraison." },
       { property: "og:title", content: "Point de Vente — Ladid Food" },
-      { property: "og:description", content: "Retrait sur place ou livraison à Casablanca — infos pratiques du point de vente." },
+      { property: "og:description", content: "Retrait sur place ou livraison à Kénitra — infos pratiques du point de vente." },
     ],
   }),
   component: PdvPage,
@@ -51,7 +51,7 @@ function PdvPage() {
               <InfoRow icon={MapPin} label="Adresse" value={CONTACT.address} />
               <InfoRow icon={Phone} label="Téléphone" value={<a href={CONTACT.phoneHref} className="hover:text-primary">{CONTACT.phoneDisplay}</a>} />
               <InfoRow icon={Clock} label="Heures d'ouverture" value={CONTACT.hours} />
-              <InfoRow icon={Truck} label="Zones de livraison" value="Maârif, Gauthier, Bourgogne, Ain Diab, Racine, CIL, 2 Mars — et plus." />
+              <InfoRow icon={Truck} label="Zones de livraison" value="Ville nouvelle, Al Wahda, Centre-ville, Sidi Brahim, Ouled Oujih, Mehdia — et plus." />
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={CONTACT.phoneHref} className="btn-primary"><Phone className="h-4 w-4" /> Appeler</a>
@@ -90,7 +90,7 @@ function PdvPage() {
         <div className="mx-auto max-w-6xl px-4 md:px-8">
           <h2 className="section-title text-center text-white">Livraison ou Click & Collect</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <OptionCard icon={Truck} title="Livraison à domicile" text="Nous livrons dans les principaux quartiers de Casablanca en 30 minutes en moyenne." cta="Commander la livraison" />
+            <OptionCard icon={Truck} title="Livraison à domicile" text="Nous livrons dans les principaux quartiers de Kénitra en 30 minutes en moyenne." cta="Commander la livraison" />
             <OptionCard icon={ShoppingBag} title="Click & Collect" text="Passez commande par WhatsApp et récupérez votre repas prêt sur notre point de vente." cta="Réserver mon retrait" />
           </div>
         </div>
