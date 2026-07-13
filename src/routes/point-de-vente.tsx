@@ -51,7 +51,7 @@ function PdvPage() {
               <InfoRow icon={MapPin} label="Adresse" value={CONTACT.address} />
               <InfoRow icon={Phone} label="Téléphone" value={<a href={CONTACT.phoneHref} className="hover:text-primary">{CONTACT.phoneDisplay}</a>} />
               <InfoRow icon={Clock} label="Heures d'ouverture" value={CONTACT.hours} />
-              <InfoRow icon={Truck} label="Zones de livraison" value="Maârif, Gauthier, Bourgogne, Ain Diab, Racine, CIL, 2 Mars — et plus." />
+              <InfoRow icon={Truck} label="Zones de livraison" value="Ville nouvelle, Al Wahda, Centre-ville, Sidi Brahim, Ouled Oujih, Mehdia — et plus." />
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={CONTACT.phoneHref} className="btn-primary"><Phone className="h-4 w-4" /> Appeler</a>
