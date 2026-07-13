@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Leaf, Heart, ShieldCheck, Users } from "lucide-react";
 import aboutImg from "@/assets/about-kitchen.jpg.asset.json";
 import teamImg from "@/assets/team-photo.jpg.asset.json";
+import aboutHero from "@/assets/rfissa.png.asset.json";
 import { Reviews } from "@/components/Reviews";
 
 export const Route = createFileRoute("/a-propos")({
