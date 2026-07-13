@@ -5,6 +5,7 @@ import { DISHES, CATEGORY_LABELS, type Category, type Protein } from "@/lib/menu
 import { DishCard } from "@/components/DishCard";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
+import menuHero from "@/assets/family-pack.png.asset.json";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
