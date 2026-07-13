@@ -1,19 +1,22 @@
-import essentials from "@/assets/essentials-pack.jpg.asset.json";
-import boeufFume from "@/assets/boeuf-fume.jpg.asset.json";
-import boeufVapeur from "@/assets/boeuf-vapeur.jpg.asset.json";
-import golden from "@/assets/golden-fried-chicken.jpg.asset.json";
-import familyPack from "@/assets/family-pack.jpg.asset.json";
-import tajinePokeYaourt from "@/assets/tajine-pokebowl-yaourt.jpg.asset.json";
-import tajinePoke from "@/assets/tajine-pokebowl-jus.jpg.asset.json";
-import pastaFormule from "@/assets/pasta-formule.jpg.asset.json";
-import breakfast from "@/assets/breakfast-sucre-sale.jpg.asset.json";
-import tajineVege from "@/assets/tajine-vegetarien.jpg.asset.json";
-import rfissa from "@/assets/rfissa.jpg.asset.json";
-import kerin from "@/assets/kerin.jpg.asset.json";
-import couscousPoulet from "@/assets/couscous-poulet.jpg.asset.json";
-import couscousBoeuf from "@/assets/couscous-boeuf.jpg.asset.json";
-import pastillaPoulet from "@/assets/pastilla-poulet.jpg.asset.json";
-import pastillaPoisson from "@/assets/pastilla-poisson.jpg.asset.json";
+import essentials from "@/assets/essentials-pack.png.asset.json";
+import boeufFume from "@/assets/boeuf-fume.png.asset.json";
+import boeufVapeur from "@/assets/boeuf-vapeur.png.asset.json";
+import golden from "@/assets/golden-fried-chicken.png.asset.json";
+import familyPack from "@/assets/family-pack.png.asset.json";
+import tajinePokeYaourt from "@/assets/tajine-pokebowl-yaourt.png.asset.json";
+import tajinePoke from "@/assets/tajine-pokebowl-jus.png.asset.json";
+import pastaFormule from "@/assets/pasta-formule.png.asset.json";
+import pastaJus from "@/assets/pasta-jus.png.asset.json";
+import breakfastLuxe from "@/assets/breakfast-luxe.png.asset.json";
+import breakfastSucreSale from "@/assets/breakfast-sucre-sale.png.asset.json";
+import tajineVegeJus from "@/assets/tajine-vege-jus.png.asset.json";
+import tajineVegeYaourt from "@/assets/tajine-vege-yaourt.png.asset.json";
+import rfissa from "@/assets/rfissa.png.asset.json";
+import kerin from "@/assets/kerin.png.asset.json";
+import couscousPoulet from "@/assets/couscous-poulet.png.asset.json";
+import couscousBoeuf from "@/assets/couscous-boeuf.png.asset.json";
+import pastillaPoulet from "@/assets/pastilla-poulet.png.asset.json";
+import pastillaPoisson from "@/assets/pastilla-poisson.png.asset.json";
 
 export type Protein = "Poulet" | "Bœuf" | "Agneau" | "Poisson" | "Végétarien";
 export type Category =
@@ -131,7 +134,7 @@ export const DISHES: Dish[] = [
     name: "Pasta Sauce Tomate & Boulettes + Jus d'Orange",
     description: "Pâtes gourmandes aux boulettes de viande, servies avec un jus d'orange frais.",
     price: 37,
-    image: pastaFormule.url,
+    image: pastaJus.url,
     category: "pasta",
     proteins: ["Bœuf"],
   },
@@ -141,7 +144,7 @@ export const DISHES: Dish[] = [
     name: "Petit-Déjeuner de Luxe",
     description: "Toast croustillant, sauce avocat crémeuse, crevettes fraîches, œuf au plat, jus d'orange, boisson chaude au choix et pana cotta fraise.",
     price: 65,
-    image: breakfast.url,
+    image: breakfastLuxe.url,
     category: "breakfast",
     proteins: ["Poisson"],
   },
@@ -150,7 +153,7 @@ export const DISHES: Dish[] = [
     name: "Breakfast Sucré-Salé",
     description: "Toast avocat & crevettes avec œuf parfait, toast banane sauce caramel et jus d'orange frais.",
     price: 49,
-    image: breakfast.url,
+    image: breakfastSucreSale.url,
     category: "breakfast",
     proteins: ["Poisson", "Végétarien"],
   },
@@ -160,7 +163,7 @@ export const DISHES: Dish[] = [
     name: "Tajine Beldi Végétarien + Jus d'Orange",
     description: "Légumes du marché mijotés au tajine, épices douces et jus d'orange pressé.",
     price: 38,
-    image: tajineVege.url,
+    image: tajineVegeJus.url,
     category: "tajines",
     proteins: ["Végétarien"],
     vegetarian: true,
@@ -170,7 +173,7 @@ export const DISHES: Dish[] = [
     name: "Tajine Beldi Végétarien + Yaourt Fraise",
     description: "Tajine de légumes fondants et yaourt fraise maison pour finir en douceur.",
     price: 38,
-    image: tajineVege.url,
+    image: tajineVegeYaourt.url,
     category: "tajines",
     proteins: ["Végétarien"],
     vegetarian: true,
@@ -236,3 +239,14 @@ export const DISHES: Dish[] = [
 ];
 
 export const BEST_SELLERS = DISHES.filter((d) => d.bestSeller).slice(0, 4);
+
+// Daily specials — one signature dish per day
+export const DAILY_SPECIALS: { day: string; dishId: string; note: string }[] = [
+  { day: "Lundi", dishId: "essentials-pack", note: "Le classique pour bien commencer la semaine" },
+  { day: "Mardi", dishId: "tajine-poke-jus", note: "Tradition & fraîcheur en un seul pack" },
+  { day: "Mercredi", dishId: "rfissa", note: "Rfissa maison, comme chez maman" },
+  { day: "Jeudi", dishId: "kerin", note: "Ker3in du jeudi, pois chiches & pieds de veau" },
+  { day: "Vendredi", dishId: "couscous-poulet", note: "Le couscous du vendredi, servi avec lben" },
+  { day: "Samedi", dishId: "pastilla-poulet", note: "Pastilla dorée, format familial" },
+  { day: "Dimanche", dishId: "family-pack", note: "Family Pack pour le déjeuner en famille" },
+];
