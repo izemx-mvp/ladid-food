@@ -5,7 +5,7 @@ import { WhatsAppIcon } from "./Header";
 
 export function Footer() {
   return (
-    <footer className="relative mt-24 bg-[oklch(0.2_0.02_250)] text-white/80">
+    <footer className="relative bg-[oklch(0.2_0.02_250)] text-white/80">
       <div className="absolute inset-x-0 top-0 h-[3px] bg-primary" />
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         <div className="flex flex-col items-start gap-4 border-b border-white/10 pb-8 md:flex-row md:items-center md:justify-between">
@@ -22,36 +22,100 @@ export function Footer() {
           <div>
             <h4 className="mb-4 font-display text-lg font-semibold text-white">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-primary">Accueil</Link></li>
-              <li><Link to="/menu" className="hover:text-primary">Notre Menu</Link></li>
-              <li><Link to="/point-de-vente" className="hover:text-primary">Point de Vente</Link></li>
-              <li><Link to="/a-propos" className="hover:text-primary">À Propos</Link></li>
-              <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
+              <li>
+                <Link to="/" className="hover:text-primary">
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" className="hover:text-primary">
+                  Notre Menu
+                </Link>
+              </li>
+              <li>
+                <Link to="/point-de-vente" className="hover:text-primary">
+                  Point de Vente
+                </Link>
+              </li>
+              <li>
+                <Link to="/a-propos" className="hover:text-primary">
+                  À Propos
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-primary">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="mb-4 font-display text-lg font-semibold text-white">Catégories</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/menu" hash="tajines" className="hover:text-primary">Tajines</Link></li>
-              <li><Link to="/menu" hash="pastilla" className="hover:text-primary">Pastilla</Link></li>
-              <li><Link to="/menu" hash="packs" className="hover:text-primary">Packs & Formules</Link></li>
-              <li><Link to="/menu" hash="breakfast" className="hover:text-primary">Petit-déjeuner</Link></li>
-              <li><Link to="/menu" hash="couscous" className="hover:text-primary">Couscous</Link></li>
+              <li>
+                <Link to="/menu" hash="tajines" className="hover:text-primary">
+                  Tajines
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" hash="pastilla" className="hover:text-primary">
+                  Pastilla
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" hash="packs" className="hover:text-primary">
+                  Packs & Formules
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" hash="breakfast" className="hover:text-primary">
+                  Petit-déjeuner
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" hash="couscous" className="hover:text-primary">
+                  Couscous
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="mb-4 font-display text-lg font-semibold text-white">Suivez-nous</h4>
             <div className="flex gap-3">
-              <a href={CONTACT.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-white">
+              <a
+                href={CONTACT.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-white"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href={CONTACT.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-white">
+              <a
+                href={CONTACT.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-white"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href={CONTACT.socials.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-white">
+              <a
+                href={CONTACT.socials.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-white"
+              >
                 <TikTokIcon className="h-5 w-5" />
               </a>
-              <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center rounded-full bg-whatsapp text-white hover:brightness-110">
+              <a
+                href={CONTACT.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-whatsapp text-white hover:brightness-110"
+              >
                 <WhatsAppIcon className="h-5 w-5" />
               </a>
             </div>
@@ -59,10 +123,24 @@ export function Footer() {
           <div>
             <h4 className="mb-4 font-display text-lg font-semibold text-white">Contact</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> {CONTACT.address}</li>
-              <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-primary" /> <a href={CONTACT.phoneHref} className="hover:text-primary">{CONTACT.phoneDisplay}</a></li>
-              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" /> <a href={`mailto:${CONTACT.email}`} className="hover:text-primary">{CONTACT.email}</a></li>
-              <li className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 text-primary" /> {CONTACT.hours}</li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 text-primary" /> {CONTACT.address}
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 text-primary" />{" "}
+                <a href={CONTACT.phoneHref} className="hover:text-primary">
+                  {CONTACT.phoneDisplay}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 text-primary" />{" "}
+                <a href={`mailto:${CONTACT.email}`} className="hover:text-primary">
+                  {CONTACT.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Clock className="mt-0.5 h-4 w-4 text-primary" /> {CONTACT.hours}
+              </li>
             </ul>
           </div>
         </div>
