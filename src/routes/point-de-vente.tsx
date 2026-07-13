@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Truck, ShoppingBag, Navigation } from "lucide-react";
-import pdv from "@/assets/point-de-vente-new.png.asset.json";
+import pdv from "@/assets/point-de-vente-new.png";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
 
@@ -21,7 +21,7 @@ function PdvPage() {
     <>
       <section
         className="relative bg-cover bg-center py-20 md:py-28"
-        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.6), rgba(34,41,47,0.6)), url(${pdv.url})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.6), rgba(34,41,47,0.6)), url(${pdv})` }}
       >
         <div className="mx-auto max-w-4xl px-4 text-center text-white md:px-8">
           <h1 className="section-title text-white">Notre Point de Vente</h1>
@@ -36,7 +36,7 @@ function PdvPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-2 md:items-center md:px-8">
           <div>
             <img
-              src={pdv.url}
+              src={pdv}
               alt="Point de vente Ladid Food"
               loading="lazy"
               className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"

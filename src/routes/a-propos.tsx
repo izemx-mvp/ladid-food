@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Leaf, Heart, ShieldCheck, Users } from "lucide-react";
-import aboutImg from "@/assets/about-kitchen.jpg.asset.json";
-import teamImg from "@/assets/team-photo.jpg.asset.json";
-import aboutHero from "@/assets/rfissa.png.asset.json";
+import aboutImg from "@/assets/about-kitchen.jpg";
+import teamImg from "@/assets/team-photo.jpg";
+import aboutHero from "@/assets/rfissa.png";
 import { Reviews } from "@/components/Reviews";
 
 export const Route = createFileRoute("/a-propos")({
@@ -35,7 +35,7 @@ function About() {
     <>
       <section
         className="relative bg-cover bg-center py-20 md:py-28"
-        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.65), rgba(34,41,47,0.65)), url(${aboutHero.url})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.65), rgba(34,41,47,0.65)), url(${aboutHero})` }}
       >
         <div className="mx-auto max-w-4xl px-4 text-center text-white md:px-8">
           <h1 className="section-title text-white">À Propos de Nous</h1>
@@ -47,7 +47,7 @@ function About() {
 
       <section className="bg-white py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:items-center md:px-8">
-          <img src={aboutImg.url} alt="Notre cuisine centrale" loading="lazy" className="w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]" />
+          <img src={aboutImg} alt="Notre cuisine centrale" loading="lazy" className="w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]" />
           <div>
             <h2 className="section-title">Notre Histoire</h2>
             <p className="mt-5 text-foreground/80">
@@ -67,7 +67,7 @@ function About() {
             <span className="text-sm font-semibold uppercase tracking-wider">L'équipe Ladid</span>
           </div>
           <h2 className="section-title mt-3 text-center">Notre Équipe</h2>
-          <img src={teamImg.url} alt="L'équipe Ladid Food" loading="lazy" className="mx-auto mt-10 w-full max-w-5xl rounded-3xl object-cover shadow-[var(--shadow-soft)]" />
+          <img src={teamImg} alt="L'équipe Ladid Food" loading="lazy" className="mx-auto mt-10 w-full max-w-5xl rounded-3xl object-cover shadow-[var(--shadow-soft)]" />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM.map((m) => (
               <div key={m.name} className="rounded-2xl bg-white p-6 text-center shadow-[var(--shadow-card)]">
