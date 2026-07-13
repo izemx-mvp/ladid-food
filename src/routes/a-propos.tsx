@@ -33,10 +33,13 @@ const VALUES = [
 function About() {
   return (
     <>
-      <section className="bg-gradient-to-br from-cream to-white py-16 md:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center md:px-8">
-          <h1 className="section-title">À Propos de Nous</h1>
-          <p className="mt-4 text-muted-foreground">
+      <section
+        className="relative bg-cover bg-center py-20 md:py-28"
+        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.65), rgba(34,41,47,0.65)), url(${aboutHero.url})` }}
+      >
+        <div className="mx-auto max-w-4xl px-4 text-center text-white md:px-8">
+          <h1 className="section-title text-white">À Propos de Nous</h1>
+          <p className="mt-4 text-white/85">
             Une cuisine familiale marocaine, pensée pour votre quotidien.
           </p>
         </div>
