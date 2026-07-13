@@ -90,7 +90,7 @@ function PdvPage() {
         <div className="mx-auto max-w-6xl px-4 md:px-8">
           <h2 className="section-title text-center text-white">Livraison ou Click & Collect</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <OptionCard icon={Truck} title="Livraison à domicile" text="Nous livrons dans les principaux quartiers de Casablanca en 30 minutes en moyenne." cta="Commander la livraison" />
+            <OptionCard icon={Truck} title="Livraison à domicile" text="Nous livrons dans les principaux quartiers de Kénitra en 30 minutes en moyenne." cta="Commander la livraison" />
             <OptionCard icon={ShoppingBag} title="Click & Collect" text="Passez commande par WhatsApp et récupérez votre repas prêt sur notre point de vente." cta="Réserver mon retrait" />
           </div>
         </div>
