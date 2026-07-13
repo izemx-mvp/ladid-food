@@ -23,89 +23,139 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[100] bg-white transition-shadow ${
-        scrolled ? "shadow-[0_2px_16px_rgba(43,186,201,0.15)]" : ""
+      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-300 ${
+        scrolled
+          ? "bg-white/85 shadow-[0_8px_30px_-8px_rgba(43,186,201,0.25)] backdrop-blur-md"
+          : "bg-white shadow-[0_1px_0_rgba(0,0,0,0.06)]"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo.url} alt="Ladid Food" className="h-12 w-auto" />
+      {/* Signature top accent — mirrors the footer's brand line */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 md:px-8">
+        <Link to="/" className="group flex items-center gap-2">
+          <img
+            src={logo.url}
+            alt="Ladid Food"
+            className="h-16 w-auto transition-transform duration-300 ease-out group-hover:scale-[1.03] md:h-[4.5rem]"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary [&.active]:text-primary [&.active]:font-semibold"
               activeOptions={{ exact: n.to === "/" }}
+              className="group relative px-4 py-2 text-sm font-medium tracking-wide text-foreground/75 transition-colors hover:text-primary [&.active]:text-primary [&.active]:font-semibold"
             >
               {n.label}
+              <span className="absolute inset-x-4 -bottom-0.5 h-[2px] scale-x-0 rounded-full bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100 [&.active]:scale-x-100" />
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a href={CONTACT.phoneHref} className="flex items-center gap-1.5 text-sm font-medium text-primary">
+        <div className="hidden items-center gap-4 lg:flex">
+          <div className="h-8 w-px bg-border" />
+
+          <a
+            href={CONTACT.phoneHref}
+            className="flex items-center gap-2 rounded-full bg-cream px-3.5 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+          >
             <Phone className="h-4 w-4" />
             {CONTACT.phoneDisplay}
           </a>
+
           <a
             href={whatsappGeneralUrl()}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-whatsapp text-white transition-transform hover:scale-105"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_4px_14px_-2px_rgba(37,211,102,0.5)] transition-transform duration-200 hover:scale-105 hover:shadow-[0_6px_18px_-2px_rgba(37,211,102,0.6)]"
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
-          <Link to="/menu" className="btn-primary text-sm">
+
+          <Link
+            to="/menu"
+            className="btn-primary rounded-full px-6 py-2.5 text-sm font-semibold shadow-[0_6px_20px_-4px_rgba(43,186,201,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-4px_rgba(43,186,201,0.65)]"
+          >
             Commander
           </Link>
         </div>
 
         <button
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-foreground lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-cream text-foreground transition-colors hover:bg-primary/10 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Menu"
+          aria-expanded={open}
         >
           {open ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
         </button>
       </div>
 
-      {open && (
-        <div className="border-t border-border bg-white px-4 py-4 lg:hidden">
-          <nav className="flex flex-col gap-3">
-            {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-base font-medium text-foreground/90 hover:bg-cream [&.active]:text-primary"
-                activeOptions={{ exact: n.to === "/" }}
-              >
-                {n.label}
-              </Link>
-            ))}
-            <a href={CONTACT.phoneHref} className="flex items-center gap-2 rounded-lg px-3 py-2 text-primary">
-              <Phone className="h-4 w-4" /> {CONTACT.phoneDisplay}
-            </a>
-            <a
-              href={whatsappGeneralUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp w-full"
+      {/* Mobile overlay */}
+      <div
+        className={`fixed inset-0 top-[calc(6rem+3px)] z-[90] bg-black/30 backdrop-blur-[2px] transition-opacity duration-300 lg:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        onClick={() => setOpen(false)}
+        aria-hidden
+      />
+
+      {/* Mobile panel */}
+      <div
+        className={`absolute inset-x-0 top-full z-[95] origin-top border-t border-border bg-white px-4 pb-6 pt-4 shadow-[0_16px_32px_-8px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out lg:hidden ${
+          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
+      >
+        <nav className="flex flex-col gap-1">
+          {NAV.map((n) => (
+            <Link
+              key={n.to}
+              to={n.to}
+              onClick={() => setOpen(false)}
+              activeOptions={{ exact: n.to === "/" }}
+              className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground/90 transition-colors hover:bg-cream [&.active]:bg-primary/10 [&.active]:text-primary [&.active]:font-semibold"
             >
-              <WhatsAppIcon className="h-5 w-5" /> WhatsApp
-            </a>
-            <Link to="/menu" onClick={() => setOpen(false)} className="btn-primary w-full">
-              Commander
+              {n.label}
             </Link>
-          </nav>
-        </div>
-      )}
+          ))}
+
+          <div className="my-2 h-px bg-border" />
+
+          <a
+            href={CONTACT.phoneHref}
+            className="flex items-center gap-2 rounded-lg px-3 py-2.5 font-medium text-primary hover:bg-cream"
+          >
+            <Phone className="h-4 w-4" /> {CONTACT.phoneDisplay}
+          </a>
+          <a
+            href={whatsappGeneralUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-whatsapp mt-2 w-full rounded-full"
+          >
+            <WhatsAppIcon className="h-5 w-5" /> WhatsApp
+          </a>
+          <Link
+            to="/menu"
+            onClick={() => setOpen(false)}
+            className="btn-primary mt-2 w-full rounded-full shadow-[0_6px_20px_-4px_rgba(43,186,201,0.5)]"
+          >
+            Commander
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }
