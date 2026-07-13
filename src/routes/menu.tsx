@@ -5,7 +5,7 @@ import { DISHES, CATEGORY_LABELS, type Category, type Protein } from "@/lib/menu
 import { DishCard } from "@/components/DishCard";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
-import menuHero from "@/assets/family-pack.png.asset.json";
+import menuHero from "@/assets/family-pack.png";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
@@ -61,7 +61,7 @@ function MenuPage() {
     <>
       <section
         className="relative bg-cover bg-center py-20 md:py-28"
-        style={{ backgroundImage: `linear-gradient(rgba(19,78,84,0.82), rgba(19,78,84,0.82)), url(${menuHero.url})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(19,78,84,0.82), rgba(19,78,84,0.82)), url(${menuHero})` }}
       >
         <div className="mx-auto max-w-4xl px-4 text-center text-white md:px-8">
           <h1 className="section-title text-white">Notre Menu</h1>

@@ -2,13 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Leaf, Clock, ShieldCheck, Heart, CheckCircle2, Home, Calendar, Sparkles,
 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg.asset.json";
-import tajinesImg from "@/assets/tajine-vege-jus.png.asset.json";
-import pastillaImg from "@/assets/pastilla-poulet.png.asset.json";
-import packsImg from "@/assets/family-pack.png.asset.json";
-import breakfastImg from "@/assets/breakfast-luxe.png.asset.json";
-import couscousImg from "@/assets/couscous-poulet.png.asset.json";
-import pastaImg from "@/assets/pasta-formule.png.asset.json";
+import heroBg from "@/assets/hero-bg.jpg";
+import tajinesImg from "@/assets/tajine-vege-jus.png";
+import pastillaImg from "@/assets/pastilla-poulet.png";
+import packsImg from "@/assets/family-pack.png";
+import breakfastImg from "@/assets/breakfast-luxe.png";
+import couscousImg from "@/assets/couscous-poulet.png";
+import pastaImg from "@/assets/pasta-formule.png";
 import { BEST_SELLERS, DAILY_SPECIALS, DISHES } from "@/lib/menu-data";
 import { DishCard } from "@/components/DishCard";
 import { Reviews } from "@/components/Reviews";
@@ -28,12 +28,12 @@ export const Route = createFileRoute("/")({
 });
 
 const CATEGORIES = [
-  { img: tajinesImg.url, title: "Tajines & Plats Mijotés", desc: "Tajine beldi, tajine légumes, rfissa, ker3in", href: "/menu", hash: "tajines" },
-  { img: pastillaImg.url, title: "Pastilla", desc: "Pastilla poulet ou poisson, format familial", href: "/menu", hash: "pastilla" },
-  { img: packsImg.url, title: "Packs & Formules", desc: "Formules complètes prêtes à savourer", href: "/menu", hash: "packs" },
-  { img: breakfastImg.url, title: "Petit-déjeuner", desc: "Toasts gourmands, jus frais", href: "/menu", hash: "breakfast" },
-  { img: couscousImg.url, title: "Couscous", desc: "Couscous poulet ou bœuf, préparé le vendredi", href: "/menu", hash: "couscous" },
-  { img: pastaImg.url, title: "Pasta & Léger", desc: "Pâtes, salades fraîches, jus", href: "/menu", hash: "pasta" },
+  { img: tajinesImg, title: "Tajines & Plats Mijotés", desc: "Tajine beldi, tajine légumes, rfissa, ker3in", href: "/menu", hash: "tajines" },
+  { img: pastillaImg, title: "Pastilla", desc: "Pastilla poulet ou poisson, format familial", href: "/menu", hash: "pastilla" },
+  { img: packsImg, title: "Packs & Formules", desc: "Formules complètes prêtes à savourer", href: "/menu", hash: "packs" },
+  { img: breakfastImg, title: "Petit-déjeuner", desc: "Toasts gourmands, jus frais", href: "/menu", hash: "breakfast" },
+  { img: couscousImg, title: "Couscous", desc: "Couscous poulet ou bœuf, préparé le vendredi", href: "/menu", hash: "couscous" },
+  { img: pastaImg, title: "Pasta & Léger", desc: "Pâtes, salades fraîches, jus", href: "/menu", hash: "pasta" },
 ];
 
 const STATS = [
@@ -60,7 +60,7 @@ function Home2() {
       {/* Hero */}
       <section
         className="relative flex min-h-[92vh] items-center bg-cover bg-center"
-        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.55), rgba(34,41,47,0.55)), url(${heroBg.url})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(34,41,47,0.55), rgba(34,41,47,0.55)), url(${heroBg})` }}
       >
         <div className="mx-auto w-full max-w-7xl px-4 py-24 md:px-8">
           <div className="max-w-[720px] fade-up">

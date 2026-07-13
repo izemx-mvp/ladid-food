@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
-import contactHero from "@/assets/breakfast-luxe.png.asset.json";
+import contactHero from "@/assets/breakfast-luxe.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -44,7 +44,7 @@ function ContactPage() {
     <>
       <section
         className="relative bg-cover bg-center py-20 md:py-28"
-        style={{ backgroundImage: `linear-gradient(rgba(19,78,84,0.82), rgba(19,78,84,0.82)), url(${contactHero.url})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(19,78,84,0.82), rgba(19,78,84,0.82)), url(${contactHero})` }}
       >
         <div className="mx-auto max-w-4xl px-4 text-center text-white md:px-8">
           <h1 className="section-title text-white">Contactez-Nous</h1>

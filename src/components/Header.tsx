@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu as MenuIcon, Phone, X } from "lucide-react";
-import logo from "@/assets/logo-v2.png.asset.json";
+import logo from "@/assets/logo-v2.png";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 
 const NAV = [
@@ -44,7 +44,7 @@ export function Header() {
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 md:px-8">
         <Link to="/" className="group flex items-center gap-2">
           <img
-            src={logo.url}
+            src={logo}
             alt="Ladid Food"
             className="h-16 w-auto transition-transform duration-300 ease-out group-hover:scale-[1.03] md:h-[4.5rem]"
           />

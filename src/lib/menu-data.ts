@@ -1,22 +1,22 @@
-import essentials from "@/assets/essentials-pack.png.asset.json";
-import boeufFume from "@/assets/boeuf-fume.png.asset.json";
-import boeufVapeur from "@/assets/boeuf-vapeur.png.asset.json";
-import golden from "@/assets/golden-fried-chicken.png.asset.json";
-import familyPack from "@/assets/family-pack.png.asset.json";
-import tajinePokeYaourt from "@/assets/tajine-pokebowl-yaourt.png.asset.json";
-import tajinePoke from "@/assets/tajine-pokebowl-jus.png.asset.json";
-import pastaFormule from "@/assets/pasta-formule.png.asset.json";
-import pastaJus from "@/assets/pasta-jus.png.asset.json";
-import breakfastLuxe from "@/assets/breakfast-luxe.png.asset.json";
-import breakfastSucreSale from "@/assets/breakfast-sucre-sale.png.asset.json";
-import tajineVegeJus from "@/assets/tajine-vege-jus.png.asset.json";
-import tajineVegeYaourt from "@/assets/tajine-vege-yaourt.png.asset.json";
-import rfissa from "@/assets/rfissa.png.asset.json";
-import kerin from "@/assets/kerin.png.asset.json";
-import couscousPoulet from "@/assets/couscous-poulet.png.asset.json";
-import couscousBoeuf from "@/assets/couscous-boeuf.png.asset.json";
-import pastillaPoulet from "@/assets/pastilla-poulet.png.asset.json";
-import pastillaPoisson from "@/assets/pastilla-poisson.png.asset.json";
+import essentials from "@/assets/essentials-pack.png";
+import boeufFume from "@/assets/boeuf-fume.png";
+import boeufVapeur from "@/assets/boeuf-vapeur.png";
+import golden from "@/assets/golden-fried-chicken.png";
+import familyPack from "@/assets/family-pack.png";
+import tajinePokeYaourt from "@/assets/tajine-pokebowl-yaourt.png";
+import tajinePoke from "@/assets/tajine-pokebowl-jus.png";
+import pastaFormule from "@/assets/pasta-formule.png";
+import pastaJus from "@/assets/pasta-jus.png";
+import breakfastLuxe from "@/assets/breakfast-luxe.png";
+import breakfastSucreSale from "@/assets/breakfast-sucre-sale.png";
+import tajineVegeJus from "@/assets/tajine-vege-jus.png";
+import tajineVegeYaourt from "@/assets/tajine-vege-yaourt.png";
+import rfissa from "@/assets/rfissa.png";
+import kerin from "@/assets/kerin.png";
+import couscousPoulet from "@/assets/couscous-poulet.png";
+import couscousBoeuf from "@/assets/couscous-boeuf.png";
+import pastillaPoulet from "@/assets/pastilla-poulet.png";
+import pastillaPoisson from "@/assets/pastilla-poisson.png";
 
 export type Protein = "Poulet" | "Bœuf" | "Agneau" | "Poisson" | "Végétarien";
 export type Category =
@@ -57,7 +57,7 @@ export const DISHES: Dish[] = [
     name: "The Essentials Pack",
     description: "Poulet fondant, daghmira maison et riz parfumé — le grand classique du quotidien.",
     price: 28,
-    image: essentials.url,
+    image: essentials,
     category: "packs",
     proteins: ["Poulet"],
   },
@@ -66,7 +66,7 @@ export const DISHES: Dish[] = [
     name: "Pack Bœuf Fumé Marocain",
     description: "Bœuf fumé façon marocaine, salade fraîche et jus d'orange pressé.",
     price: 68,
-    image: boeufFume.url,
+    image: boeufFume,
     category: "packs",
     proteins: ["Bœuf"],
   },
@@ -75,7 +75,7 @@ export const DISHES: Dish[] = [
     name: "Bœuf Vapeur",
     description: "Bœuf vapeur tendre, riz et légumes vapeur, salade fraîche et jus d'orange.",
     price: 65,
-    image: boeufVapeur.url,
+    image: boeufVapeur,
     category: "packs",
     proteins: ["Bœuf"],
   },
@@ -84,7 +84,7 @@ export const DISHES: Dish[] = [
     name: "Golden Fried Chicken",
     description: "Poulet doré croustillant, riz basmati, sauce marocaine, salade verte, yaourt et jus d'orange.",
     price: 58,
-    image: golden.url,
+    image: golden,
     category: "packs",
     proteins: ["Poulet"],
     bestSeller: true,
@@ -94,7 +94,7 @@ export const DISHES: Dish[] = [
     name: "Family Pack",
     description: "Tajine beldi, poulet grillé sur riz basmati, poke bowl, 2 jus d'orange et 2 yaourts — idéal 3 à 4 personnes.",
     price: 128,
-    image: familyPack.url,
+    image: familyPack,
     category: "packs",
     proteins: ["Poulet", "Bœuf"],
     bestSeller: true,
@@ -104,7 +104,7 @@ export const DISHES: Dish[] = [
     name: "Tajine Beldi + Poke Bowl + Jus + Yaourt Fraise",
     description: "Tajine beldi mijoté, poke bowl frais, jus d'orange et yaourt fraise maison.",
     price: 88,
-    image: tajinePokeYaourt.url,
+    image: tajinePokeYaourt,
     category: "packs",
     proteins: ["Poulet"],
   },
@@ -113,7 +113,7 @@ export const DISHES: Dish[] = [
     name: "Tajine Beldi + Poke Bowl + Jus",
     description: "Le duo tradition + fraîcheur : tajine beldi, poke bowl et jus d'orange pressé.",
     price: 78,
-    image: tajinePoke.url,
+    image: tajinePoke,
     category: "packs",
     proteins: ["Poulet"],
     bestSeller: true,
@@ -124,7 +124,7 @@ export const DISHES: Dish[] = [
     name: "Pasta Sauce Tomate & Boulettes — Formule Complète",
     description: "Pâtes sauce tomate, boulettes de viande maison, salade fraîche, pana cotta fraise et jus d'orange.",
     price: 48,
-    image: pastaFormule.url,
+    image: pastaFormule,
     category: "pasta",
     proteins: ["Bœuf"],
     limitedOffer: true,
@@ -134,7 +134,7 @@ export const DISHES: Dish[] = [
     name: "Pasta Sauce Tomate & Boulettes + Jus d'Orange",
     description: "Pâtes gourmandes aux boulettes de viande, servies avec un jus d'orange frais.",
     price: 37,
-    image: pastaJus.url,
+    image: pastaJus,
     category: "pasta",
     proteins: ["Bœuf"],
   },
@@ -144,7 +144,7 @@ export const DISHES: Dish[] = [
     name: "Petit-Déjeuner de Luxe",
     description: "Toast croustillant, sauce avocat crémeuse, crevettes fraîches, œuf au plat, jus d'orange, boisson chaude au choix et pana cotta fraise.",
     price: 65,
-    image: breakfastLuxe.url,
+    image: breakfastLuxe,
     category: "breakfast",
     proteins: ["Poisson"],
   },
@@ -153,7 +153,7 @@ export const DISHES: Dish[] = [
     name: "Breakfast Sucré-Salé",
     description: "Toast avocat & crevettes avec œuf parfait, toast banane sauce caramel et jus d'orange frais.",
     price: 49,
-    image: breakfastSucreSale.url,
+    image: breakfastSucreSale,
     category: "breakfast",
     proteins: ["Poisson", "Végétarien"],
   },
@@ -163,7 +163,7 @@ export const DISHES: Dish[] = [
     name: "Tajine Beldi Végétarien + Jus d'Orange",
     description: "Légumes du marché mijotés au tajine, épices douces et jus d'orange pressé.",
     price: 38,
-    image: tajineVegeJus.url,
+    image: tajineVegeJus,
     category: "tajines",
     proteins: ["Végétarien"],
     vegetarian: true,
@@ -173,7 +173,7 @@ export const DISHES: Dish[] = [
     name: "Tajine Beldi Végétarien + Yaourt Fraise",
     description: "Tajine de légumes fondants et yaourt fraise maison pour finir en douceur.",
     price: 38,
-    image: tajineVegeYaourt.url,
+    image: tajineVegeYaourt,
     category: "tajines",
     proteins: ["Végétarien"],
     vegetarian: true,
@@ -183,7 +183,7 @@ export const DISHES: Dish[] = [
     name: "Rfissa Maison au Poulet Beldi",
     description: "Msemen effiloché, poulet beldi mijoté au fenugrec et lentilles — un vrai plat de maman.",
     price: 40,
-    image: rfissa.url,
+    image: rfissa,
     category: "tajines",
     proteins: ["Poulet"],
   },
@@ -192,7 +192,7 @@ export const DISHES: Dish[] = [
     name: "Pois Chiches aux Pieds de Veau (Ker3in)",
     description: "Ker3in traditionnel, pois chiches fondants et sauce parfumée au safran.",
     price: 65,
-    image: kerin.url,
+    image: kerin,
     category: "tajines",
     proteins: ["Bœuf"],
     spicy: true,
@@ -203,7 +203,7 @@ export const DISHES: Dish[] = [
     name: "Couscous Marocain au Poulet + Lben",
     description: "Semoule roulée main, poulet fondant, légumes du couscous et grand verre de lben frais.",
     price: 40,
-    image: couscousPoulet.url,
+    image: couscousPoulet,
     category: "couscous",
     proteins: ["Poulet"],
   },
@@ -212,7 +212,7 @@ export const DISHES: Dish[] = [
     name: "Couscous Marocain au Bœuf + Lben",
     description: "Semoule dorée, bœuf mijoté longuement, légumes de saison et lben glacé.",
     price: 48,
-    image: couscousBoeuf.url,
+    image: couscousBoeuf,
     category: "couscous",
     proteins: ["Bœuf"],
   },
@@ -222,7 +222,7 @@ export const DISHES: Dish[] = [
     name: "Pastilla au Poulet",
     description: "Pastilla croustillante au poulet, amandes grillées, cannelle et sucre glace — format 4 personnes.",
     price: 110,
-    image: pastillaPoulet.url,
+    image: pastillaPoulet,
     category: "pastilla",
     proteins: ["Poulet"],
     bestSeller: true,
@@ -232,7 +232,7 @@ export const DISHES: Dish[] = [
     name: "Pastilla au Poisson",
     description: "Pastilla dorée aux poissons frais, vermicelles et fines herbes — format 4 personnes.",
     price: 128,
-    image: pastillaPoisson.url,
+    image: pastillaPoisson,
     category: "pastilla",
     proteins: ["Poisson"],
   },
