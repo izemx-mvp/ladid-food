@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu as MenuIcon, Phone, X } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo-v2.png.asset.json";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 
 const NAV = [
