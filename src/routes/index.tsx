@@ -1,13 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  UtensilsCrossed, ChefHat, Package, Coffee, Soup, Salad,
-  Leaf, Clock, ShieldCheck, Heart, CheckCircle2, Home,
+  Leaf, Clock, ShieldCheck, Heart, CheckCircle2, Home, Calendar, Sparkles,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg.asset.json";
-import { BEST_SELLERS } from "@/lib/menu-data";
+import tajinesImg from "@/assets/tajine-vege-jus.png.asset.json";
+import pastillaImg from "@/assets/pastilla-poulet.png.asset.json";
+import packsImg from "@/assets/family-pack.png.asset.json";
+import breakfastImg from "@/assets/breakfast-luxe.png.asset.json";
+import couscousImg from "@/assets/couscous-poulet.png.asset.json";
+import pastaImg from "@/assets/pasta-formule.png.asset.json";
+import { BEST_SELLERS, DAILY_SPECIALS, DISHES } from "@/lib/menu-data";
 import { DishCard } from "@/components/DishCard";
 import { Reviews } from "@/components/Reviews";
-import { whatsappGeneralUrl } from "@/lib/contact";
+import { whatsappGeneralUrl, whatsappOrderUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
 
 export const Route = createFileRoute("/")({
@@ -23,12 +28,12 @@ export const Route = createFileRoute("/")({
 });
 
 const CATEGORIES = [
-  { icon: UtensilsCrossed, title: "Tajines & Plats Mijotés", desc: "Tajine beldi, tajine légumes, rfissa, ker3in", href: "/menu", hash: "tajines" },
-  { icon: ChefHat, title: "Pastilla", desc: "Pastilla poulet ou poisson, format familial", href: "/menu", hash: "pastilla" },
-  { icon: Package, title: "Packs & Formules", desc: "Formules complètes prêtes à savourer", href: "/menu", hash: "packs" },
-  { icon: Coffee, title: "Petit-déjeuner", desc: "Toasts gourmands, jus frais", href: "/menu", hash: "breakfast" },
-  { icon: Soup, title: "Couscous", desc: "Couscous poulet ou bœuf, préparé le vendredi", href: "/menu", hash: "couscous" },
-  { icon: Salad, title: "Pasta & Léger", desc: "Pâtes, salades fraîches, jus", href: "/menu", hash: "pasta" },
+  { img: tajinesImg.url, title: "Tajines & Plats Mijotés", desc: "Tajine beldi, tajine légumes, rfissa, ker3in", href: "/menu", hash: "tajines" },
+  { img: pastillaImg.url, title: "Pastilla", desc: "Pastilla poulet ou poisson, format familial", href: "/menu", hash: "pastilla" },
+  { img: packsImg.url, title: "Packs & Formules", desc: "Formules complètes prêtes à savourer", href: "/menu", hash: "packs" },
+  { img: breakfastImg.url, title: "Petit-déjeuner", desc: "Toasts gourmands, jus frais", href: "/menu", hash: "breakfast" },
+  { img: couscousImg.url, title: "Couscous", desc: "Couscous poulet ou bœuf, préparé le vendredi", href: "/menu", hash: "couscous" },
+  { img: pastaImg.url, title: "Pasta & Léger", desc: "Pâtes, salades fraîches, jus", href: "/menu", hash: "pasta" },
 ];
 
 const STATS = [
@@ -45,7 +50,11 @@ const VALUES = [
   { icon: Heart, t: "Fait Maison", d: "Comme les plats de nos mamans et grand-mères" },
 ];
 
+const DAY_ORDER = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+const todayName = () => DAY_ORDER[(new Date().getDay() + 6) % 7];
+
 function Home2() {
+  const today = todayName();
   return (
     <>
       {/* Hero */}
@@ -91,11 +100,14 @@ function Home2() {
         </div>
       </section>
 
-      {/* Categories */}
+      {/* Categories — visual grid with images */}
       <section className="bg-cream py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="section-title">Notre Cuisine</h2>
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+              <Sparkles className="h-3.5 w-3.5" /> Notre Carte
+            </span>
+            <h2 className="section-title mt-4">Notre Cuisine</h2>
             <p className="mt-3 text-muted-foreground">Des grands classiques marocains aux formules pratiques du quotidien.</p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -104,22 +116,80 @@ function Home2() {
                 key={c.title}
                 to={c.href}
                 hash={c.hash}
-                className="group flex flex-col rounded-3xl bg-white p-8 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
+                className="group relative flex h-72 flex-col justify-end overflow-hidden rounded-3xl shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
               >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                  <c.icon className="h-7 w-7" />
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+                <div className="relative p-6 text-white">
+                  <h3 className="font-display text-2xl font-semibold">{c.title}</h3>
+                  <p className="mt-1 text-sm text-white/85">{c.desc}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary-glow">
+                    Voir les plats →
+                  </span>
                 </div>
-                <h3 className="font-display text-2xl font-semibold">{c.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.desc}</p>
-                <span className="mt-4 text-sm font-semibold text-primary">Voir les plats →</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Best sellers */}
+      {/* Daily Specials */}
       <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-warm/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-warm">
+              <Calendar className="h-3.5 w-3.5" /> Le plat du jour
+            </span>
+            <h2 className="section-title mt-4">Les Spéciaux de la Semaine</h2>
+            <p className="mt-3 text-muted-foreground">
+              Chaque jour a son plat signature — mijoté le matin même, en quantité limitée.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
+            {DAILY_SPECIALS.map((s) => {
+              const dish = DISHES.find((d) => d.id === s.dishId);
+              if (!dish) return null;
+              const isToday = s.day === today;
+              return (
+                <a
+                  key={s.day}
+                  href={whatsappOrderUrl(dish.name, dish.price)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${
+                    isToday ? "ring-2 ring-warm ring-offset-2" : ""
+                  }`}
+                >
+                  <div className="relative aspect-square overflow-hidden bg-cream">
+                    <img src={dish.image} alt={dish.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className={`absolute left-2 top-2 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider shadow ${isToday ? "bg-warm text-warm-foreground" : "bg-white/95 text-foreground"}`}>
+                      {isToday ? "Aujourd'hui" : s.day}
+                    </div>
+                  </div>
+                  <div className="flex flex-1 flex-col p-3">
+                    <div className="font-display text-sm font-semibold leading-tight text-foreground line-clamp-2">
+                      {dish.name}
+                    </div>
+                    <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{s.note}</p>
+                    <div className="mt-2 flex items-center justify-between">
+                      <span className="text-sm font-bold text-primary">{dish.price} dh</span>
+                      <span className="text-[11px] font-semibold text-whatsapp">Commander →</span>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Best sellers */}
+      <section className="bg-cream py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -135,7 +205,7 @@ function Home2() {
       </section>
 
       {/* Why us */}
-      <section className="bg-cream py-20">
+      <section className="bg-white py-20">
         <div className="mx-auto grid max-w-7xl gap-14 px-4 md:grid-cols-2 md:px-8">
           <div>
             <h2 className="section-title">Pourquoi Nous Choisir</h2>
@@ -146,7 +216,7 @@ function Home2() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {VALUES.map((v) => (
-              <div key={v.t} className="rounded-2xl bg-white p-6 shadow-[var(--shadow-card)]">
+              <div key={v.t} className="rounded-2xl bg-cream p-6 shadow-[var(--shadow-card)]">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-warm/10 text-warm">
                   <v.icon className="h-5 w-5" />
                 </div>
