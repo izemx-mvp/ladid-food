@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Truck, ShoppingBag, Navigation } from "lucide-react";
-import pdv from "@/assets/point-de-vente.jpg.asset.json";
+import pdv from "@/assets/point-de-vente-new.png.asset.json";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
 
