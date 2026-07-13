@@ -6,11 +6,11 @@ import { WhatsAppIcon } from "@/components/Header";
 
 export const Route = createFileRoute("/point-de-vente")({
   head: () => ({
-    meta: [
-      { title: "Point de Vente — Ladid Food · Retrait & livraison à Casablanca" },
+      meta: [
+      { title: "Point de Vente — Ladid Food · Retrait & livraison à Kénitra" },
       { name: "description", content: "Venez récupérer votre commande sur place ou faites-vous livrer. Adresse, horaires, itinéraire et zones de livraison." },
       { property: "og:title", content: "Point de Vente — Ladid Food" },
-      { property: "og:description", content: "Retrait sur place ou livraison à Casablanca — infos pratiques du point de vente." },
+      { property: "og:description", content: "Retrait sur place ou livraison à Kénitra — infos pratiques du point de vente." },
     ],
   }),
   component: PdvPage,
