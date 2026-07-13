@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { CONTACT, whatsappGeneralUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/Header";
+import contactHero from "@/assets/breakfast-luxe.png.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
