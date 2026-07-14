@@ -11,7 +11,7 @@ export const Route = createFileRoute("/a-propos")({
       { title: "À Propos — Ladid Food · Notre cuisine centrale marocaine" },
       { name: "description", content: "Découvrez notre histoire, notre équipe et nos valeurs — une cuisine familiale marocaine pensée pour votre quotidien." },
       { property: "og:title", content: "À Propos — Ladid Food" },
-      { property: "og:description", content: "Notre histoire, notre équipe et nos valeurs — cuisine marocaine maison à Casablanca." },
+      { property: "og:description", content: "Notre histoire, notre équipe et nos valeurs — cuisine marocaine maison à Kénitra." },
     ],
   }),
   component: About,

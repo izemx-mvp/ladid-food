@@ -10,7 +10,7 @@ import menuHero from "@/assets/family-pack.png";
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
-      { title: "Notre Menu — Ladid Food · Cuisine marocaine à Casablanca" },
+      { title: "Notre Menu — Ladid Food · Cuisine marocaine à Kénitra" },
       { name: "description", content: "Explorez notre menu : tajines, pastilla, couscous, packs & formules, petit-déjeuner et pasta — préparés frais chaque jour." },
       { property: "og:title", content: "Notre Menu — Ladid Food" },
       { property: "og:description", content: "Tajines, pastilla, couscous et packs marocains, préparés frais chaque jour." },
