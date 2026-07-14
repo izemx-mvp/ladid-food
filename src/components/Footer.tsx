@@ -146,7 +146,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center text-xs text-white/60">
-          © 2026 {CONTACT.brand} — Tous droits réservés · Casablanca, Maroc
+          © 2026 {CONTACT.brand} — Tous droits réservés · Kénitra, Maroc
         </div>
       </div>
     </footer>

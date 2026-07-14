@@ -16,14 +16,14 @@ import { WhatsAppIcon } from "@/components/Header";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ladid Food — Cuisine marocaine maison, livrée à kenitra" },
+      { title: "Ladid Food — Cuisine marocaine maison, livrée à Kénitra" },
       {
         name: "description",
         content:
-          "Tajines mijotés, pastilla croustillante, couscous du vendredi — cuisine marocaine faite maison chaque jour et livrée à kenitra.",
+          "Tajines mijotés, pastilla croustillante, couscous du vendredi — cuisine marocaine faite maison chaque jour et livrée à Kénitra.",
       },
       { property: "og:title", content: "Ladid Food — Cuisine marocaine maison" },
-      { property: "og:description", content: "Tajines, pastilla, couscous et packs marocains livrés à Casablanca." },
+      { property: "og:description", content: "Tajines, pastilla, couscous et packs marocains livrés à Kénitra." },
     ],
   }),
   component: Home2,
@@ -114,7 +114,7 @@ function Home2() {
               </a>
             </div>
             <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
-              {["Fait maison chaque jour", "Livraison rapide", "Point de vente à Casablanca", "100% halal"].map((t) => (
+              {["Fait maison chaque jour", "Livraison rapide", "Point de vente à Kénitra", "100% halal"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" /> {t}
                 </li>
