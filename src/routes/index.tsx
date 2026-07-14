@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  Leaf, Clock, ShieldCheck, Heart, CheckCircle2, Home, Calendar, Sparkles,
-} from "lucide-react";
+import { Leaf, Clock, ShieldCheck, Heart, CheckCircle2, Home, Calendar, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import tajinesImg from "@/assets/tajine-vege-jus.png";
 import pastillaImg from "@/assets/pastilla-poulet.png";
@@ -18,8 +16,12 @@ import { WhatsAppIcon } from "@/components/Header";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ladid Food — Cuisine marocaine maison, livrée à Casablanca" },
-      { name: "description", content: "Tajines mijotés, pastilla croustillante, couscous du vendredi — cuisine marocaine faite maison chaque jour et livrée à Casablanca." },
+      { title: "Ladid Food — Cuisine marocaine maison, livrée à kenitra" },
+      {
+        name: "description",
+        content:
+          "Tajines mijotés, pastilla croustillante, couscous du vendredi — cuisine marocaine faite maison chaque jour et livrée à kenitra.",
+      },
       { property: "og:title", content: "Ladid Food — Cuisine marocaine maison" },
       { property: "og:description", content: "Tajines, pastilla, couscous et packs marocains livrés à Casablanca." },
     ],
@@ -28,11 +30,35 @@ export const Route = createFileRoute("/")({
 });
 
 const CATEGORIES = [
-  { img: tajinesImg, title: "Tajines & Plats Mijotés", desc: "Tajine beldi, tajine légumes, rfissa, ker3in", href: "/menu", hash: "tajines" },
-  { img: pastillaImg, title: "Pastilla", desc: "Pastilla poulet ou poisson, format familial", href: "/menu", hash: "pastilla" },
-  { img: packsImg, title: "Packs & Formules", desc: "Formules complètes prêtes à savourer", href: "/menu", hash: "packs" },
+  {
+    img: tajinesImg,
+    title: "Tajines & Plats Mijotés",
+    desc: "Tajine beldi, tajine légumes, rfissa, ker3in",
+    href: "/menu",
+    hash: "tajines",
+  },
+  {
+    img: pastillaImg,
+    title: "Pastilla",
+    desc: "Pastilla poulet ou poisson, format familial",
+    href: "/menu",
+    hash: "pastilla",
+  },
+  {
+    img: packsImg,
+    title: "Packs & Formules",
+    desc: "Formules complètes prêtes à savourer",
+    href: "/menu",
+    hash: "packs",
+  },
   { img: breakfastImg, title: "Petit-déjeuner", desc: "Toasts gourmands, jus frais", href: "/menu", hash: "breakfast" },
-  { img: couscousImg, title: "Couscous", desc: "Couscous poulet ou bœuf, préparé le vendredi", href: "/menu", hash: "couscous" },
+  {
+    img: couscousImg,
+    title: "Couscous",
+    desc: "Couscous poulet ou bœuf, préparé le vendredi",
+    href: "/menu",
+    hash: "couscous",
+  },
   { img: pastaImg, title: "Pasta & Léger", desc: "Pâtes, salades fraîches, jus", href: "/menu", hash: "pasta" },
 ];
 
@@ -71,17 +97,27 @@ function Home2() {
               La cuisine marocaine authentique, livrée chez vous
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/85">
-              Tajines mijotés, pastilla croustillante, couscous du vendredi et bien plus — préparés chaque jour comme à la maison, livrés directement chez vous ou à récupérer sur place.
+              Tajines mijotés, pastilla croustillante, couscous du vendredi et bien plus — préparés chaque jour comme à
+              la maison, livrés directement chez vous ou à récupérer sur place.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/menu" className="btn-primary text-base">Découvrir le menu</Link>
-              <a href={whatsappGeneralUrl()} target="_blank" rel="noopener noreferrer" className="btn-outline-white text-base">
+              <Link to="/menu" className="btn-primary text-base">
+                Découvrir le menu
+              </Link>
+              <a
+                href={whatsappGeneralUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-white text-base"
+              >
                 <WhatsAppIcon className="h-5 w-5" /> Commander sur WhatsApp
               </a>
             </div>
             <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
               {["Fait maison chaque jour", "Livraison rapide", "Point de vente à Casablanca", "100% halal"].map((t) => (
-                <li key={t} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> {t}</li>
+                <li key={t} className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" /> {t}
+                </li>
               ))}
             </ul>
           </div>
@@ -93,7 +129,9 @@ function Home2() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 md:grid-cols-4 md:px-8">
           {STATS.map((s) => (
             <div key={s.l} className="text-center">
-              <div className="bg-gradient-to-br from-primary to-primary-dark bg-clip-text font-display text-4xl font-bold text-transparent md:text-5xl">{s.n}</div>
+              <div className="bg-gradient-to-br from-primary to-primary-dark bg-clip-text font-display text-4xl font-bold text-transparent md:text-5xl">
+                {s.n}
+              </div>
               <div className="mt-2 text-sm font-medium text-muted-foreground md:text-base">{s.l}</div>
             </div>
           ))}
@@ -108,7 +146,9 @@ function Home2() {
               <Sparkles className="h-3.5 w-3.5" /> Notre Carte
             </span>
             <h2 className="section-title mt-4">Notre Cuisine</h2>
-            <p className="mt-3 text-muted-foreground">Des grands classiques marocains aux formules pratiques du quotidien.</p>
+            <p className="mt-3 text-muted-foreground">
+              Des grands classiques marocains aux formules pratiques du quotidien.
+            </p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {CATEGORIES.map((c) => (
@@ -166,8 +206,15 @@ function Home2() {
                   }`}
                 >
                   <div className="relative aspect-square overflow-hidden bg-cream">
-                    <img src={dish.image} alt={dish.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className={`absolute left-2 top-2 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider shadow ${isToday ? "bg-warm text-warm-foreground" : "bg-white/95 text-foreground"}`}>
+                    <img
+                      src={dish.image}
+                      alt={dish.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div
+                      className={`absolute left-2 top-2 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider shadow ${isToday ? "bg-warm text-warm-foreground" : "bg-white/95 text-foreground"}`}
+                    >
                       {isToday ? "Aujourd'hui" : s.day}
                     </div>
                   </div>
@@ -196,10 +243,14 @@ function Home2() {
               <h2 className="section-title">Nos Best-Sellers</h2>
               <p className="mt-2 text-muted-foreground">Les préférés de nos clients, semaine après semaine.</p>
             </div>
-            <Link to="/menu" className="text-sm font-semibold text-primary hover:underline">Voir tout le menu →</Link>
+            <Link to="/menu" className="text-sm font-semibold text-primary hover:underline">
+              Voir tout le menu →
+            </Link>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {BEST_SELLERS.map((d) => <DishCard key={d.id} dish={d} />)}
+            {BEST_SELLERS.map((d) => (
+              <DishCard key={d.id} dish={d} />
+            ))}
           </div>
         </div>
       </section>
@@ -210,9 +261,13 @@ function Home2() {
           <div>
             <h2 className="section-title">Pourquoi Nous Choisir</h2>
             <p className="mt-5 text-foreground/80">
-              Nous sommes une cuisine centrale marocaine (dark kitchen) née de l'envie de proposer une vraie cuisine familiale marocaine, fraîche et généreuse, sans avoir à cuisiner. Chaque plat est préparé le jour même, avec des produits frais et des recettes transmises de génération en génération.
+              Nous sommes une cuisine centrale marocaine (dark kitchen) née de l'envie de proposer une vraie cuisine
+              familiale marocaine, fraîche et généreuse, sans avoir à cuisiner. Chaque plat est préparé le jour même,
+              avec des produits frais et des recettes transmises de génération en génération.
             </p>
-            <Link to="/a-propos" className="mt-6 inline-block text-sm font-semibold text-primary hover:underline">En savoir plus sur nous →</Link>
+            <Link to="/a-propos" className="mt-6 inline-block text-sm font-semibold text-primary hover:underline">
+              En savoir plus sur nous →
+            </Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {VALUES.map((v) => (
@@ -247,7 +302,9 @@ function Home2() {
           <h2 className="section-title">Une envie de bon plat marocain ?</h2>
           <p className="mt-3 text-muted-foreground">Commandez maintenant, on s'occupe du reste.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/menu" className="btn-primary">Voir le menu</Link>
+            <Link to="/menu" className="btn-primary">
+              Voir le menu
+            </Link>
             <a href={whatsappGeneralUrl()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
               <WhatsAppIcon className="h-5 w-5" /> Commander sur WhatsApp
             </a>
